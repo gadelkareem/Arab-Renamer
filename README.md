@@ -1,4 +1,4 @@
-# Arab-Renamer
+# Arab Renamer
 Arab Renamer is a small tool to convert your Arabic letters to the corresponding English letters without any translation, but using well known method of writing Arabic.
  
 #Main Features:
