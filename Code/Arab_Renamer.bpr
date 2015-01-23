@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="Arab_Renamer.exe"/>
+    <OBJFILES value="Arab_Renamer.obj mainfrm.obj Aboutfrm.obj srchdlgfrm.obj getfilesthread.obj"/>
+    <RESFILES value="Arab_Renamer.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) mainfrm.dfm Aboutfrm.dfm srchdlgfrm.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="bdertl.lib vcldb.lib dbrtl.lib dcctc6.lib indy.lib bcbsmp.lib vclx.lib 
+      rtl.lib vcl.lib"/>
+    <SPARELIBS value="vcl.lib rtl.lib vclx.lib bcbsmp.lib indy.lib dcctc6.lib dbrtl.lib 
+      vcldb.lib bdertl.lib"/>
+    <PACKAGES value="vcl.bpi rtl.bpi dbrtl.bpi adortl.bpi vcldb.bpi vclx.bpi bdertl.bpi 
+      vcldbx.bpi ibxpress.bpi dsnap.bpi cds.bpi bdecds.bpi qrpt.bpi teeui.bpi 
+      teedb.bpi tee.bpi dss.bpi teeqr.bpi visualclx.bpi visualdbclx.bpi 
+      dsnapcrba.bpi dsnapcon.bpi bcbsmp.bpi vclie.bpi xmlrtl.bpi inet.bpi 
+      inetdbbde.bpi inetdbxpress.bpi inetdb.bpi nmfast.bpi webdsnap.bpi 
+      bcbie.bpi websnap.bpi soaprtl.bpi dclocx.bpi dbexpress.bpi dbxcds.bpi 
+      indy.bpi bcb2kaxserver.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="Arab_Renamer.cpp"/>
+    <INCLUDEPATH value="..\Arab_Renamer_v2.0;$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32"/>
+    <LIBPATH value="..\Arab_Renamer_v2.0;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib"/>
+    <WARNINGS value="-w-par"/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\Arab_Renamer_v2.0 -I$(BCB)\include -I$(BCB)\include\vcl 
+      -IC:\Boost\include\boost-1_32 -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl60.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="Arab_Renamer.res" FORMNAME="" UNITNAME="Arab_Renamer.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Arab_Renamer.cpp" FORMNAME="" UNITNAME="Arab_Renamer" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="mainfrm.cpp" FORMNAME="Form1" UNITNAME="mainfrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="Aboutfrm.cpp" FORMNAME="Form2" UNITNAME="Aboutfrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="srchdlgfrm.cpp" FORMNAME="srchdlg" UNITNAME="srchdlgfrm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="getfilesthread.cpp" FORMNAME="" UNITNAME="getfilesthread" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=2
+MinorVer=0
+Release=1
+Build=32767
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Kurtubba Software Limited
+FileDescription=Arab Renamer V2.0
+FileVersion=2.0.1.32767
+InternalName=ARCS
+LegalCopyright=© 2004 Kurtubba, http://fly.to/kurtubba
+LegalTrademarks=Kurtubba Software Limited
+OriginalFilename=Arabic Replace Character Specification
+ProductName=Arab Renamer
+ProductVersion=2.0.0.0
+Comments=Check http://fly.to/kurtubba for updates
+
+[HistoryLists\hlIncludePath]
+Count=8
+Item0=..\Arab_Renamer_v2.0;$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32
+Item1=..\Arab_Renamer_v2.0;$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32;..\Arab_renamer
+Item2=..\Arab_renamer;..\Arab_Renamer_v2.0;$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32
+Item3=$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32
+Item4=C:\Program Files\Raize\RC3\LibBCB6;$(BCB)\include;$(BCB)\include\vcl;C:\Boost\include\boost-1_32
+Item5=..\Examples\Apps\Threads;C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;$(BCB)\include;$(BCB)\include\vcl;C:\Program Files\Borland\CBuilder6\Include\Dream
+Item6=..\Examples\Apps\Threads;C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;..\..\..\Arab_renamer;$(BCB)\include;$(BCB)\include\vcl
+Item7=C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;..\..\..\Arab_renamer;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=10
+Item0=..\Arab_Renamer_v2.0;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib
+Item1=..\Arab_Renamer_v2.0;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib;..\Arab_renamer
+Item2=..\Arab_renamer;..\Arab_Renamer_v2.0;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib
+Item3=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib
+Item4=C:\Program Files\Raize\RC3\LibBCB6;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;C:\Boost\lib
+Item5=$(BCB)\Projects\Lib;..\Examples\Apps\Threads;C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;$(BCB)\lib\obj;$(BCB)\lib;C:\Program Files\Borland\CBuilder6\Include\Dream
+Item6=$(BCB)\Projects\Lib;..\Examples\Apps\Threads;C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..\Examples\Apps\Threads;C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;$(BCB)\lib\obj;$(BCB)\lib
+Item8=C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;$(BCB)\lib\obj;$(BCB)\lib
+Item9=C:\Program Files\Raize\RC3\LibBCB6;..\Examples\Apps\MiniComp;..\..\..\Arab_renamer;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
