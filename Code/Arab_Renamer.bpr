@@ -86,12 +86,12 @@ CompanyName=Kurtubba Software Limited
 FileDescription=Arab Renamer V2.0
 FileVersion=2.0.1.32767
 InternalName=ARCS
-LegalCopyright=© 2004 Kurtubba, http://fly.to/kurtubba
+LegalCopyright=© 2004 Kurtubba, http://gadelkareem.com/2006/10/13/arab-renamer-v2/
 LegalTrademarks=Kurtubba Software Limited
 OriginalFilename=Arabic Replace Character Specification
 ProductName=Arab Renamer
 ProductVersion=2.0.0.0
-Comments=Check http://fly.to/kurtubba for updates
+Comments=Check http://gadelkareem.com/2006/10/13/arab-renamer-v2/ for updates
 
 [HistoryLists\hlIncludePath]
 Count=8
