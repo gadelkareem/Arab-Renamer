@@ -6,12 +6,12 @@
 +  files names during renaming.
 +  The program uses characters like 3, ', 6 and 7 which are popular characters
 +  used to replace specific Arabic letters.
-+  Copyright © 2004  Kurtubba Software Limited
-+  Developed by Walid Aly
-+  http://fly.to/kurtubba
++  Copyright Â© 2004  Kurtubba Software Limited
++  Developed by Waleed Gadelkareem
++  http://gadelkareem.com/2006/10/13/arab-renamer-v2/
 +  +201 215 78967
 +  We welcome bug report and/or enhancement request:
-+  kurtubba@gawab.com
++  gadelkareem@gmail.com
 +
 +  This program is free software; you can redistribute it and/or modify
 +  it under the terms of the GNU General Public License as published by
