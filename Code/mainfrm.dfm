@@ -6043,7 +6043,7 @@ object Form1: TForm1
       Height = 15
       Cursor = crHandPoint
       Hint = 'Visit our Website'
-      Caption = 'http://fly.to/Kurtubba'
+      Caption = 'http://gadelkareem.com/2006/10/13/arab-renamer-v2/'
       Color = clBtnFace
       Font.Charset = ARABIC_CHARSET
       Font.Color = clBlue
