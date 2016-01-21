@@ -6,12 +6,12 @@
 +  files names during renaming.
 +  The program uses characters like 3, ', 6 and 7 which are popular characters
 +  used to replace specific Arabic letters.
-+  Copyright © 2004  Kurtubba Software Limited
-+  Developed by Walid Aly
-+  http://fly.to/kurtubba
++  Copyright ¬© 2004  Kurtubba Software Limited
++  Developed by Waleed Gadelkareem
++  http://gadelkareem.com/2006/10/13/arab-renamer-v2/
 +  +201 215 78967
 +  We welcome bug report and/or enhancement request:
-+  kurtubba@gawab.com
++  gadelkareem@gmail.com
 +
 +  This program is free software; you can redistribute it and/or modify
 +  it under the terms of the GNU General Public License as published by
@@ -153,13 +153,13 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 
 void __fastcall TForm1::Label3Click(TObject *Sender)
 {
-  ShellExecute(0,"open","http://fly.to/kurtubba",0,0,SW_SHOWMAXIMIZED );
+  ShellExecute(0,"open","http://gadelkareem.com/2006/10/13/arab-renamer-v2/",0,0,SW_SHOWMAXIMIZED );
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::Image1Click(TObject *Sender)
 {
-  ShellExecute(0,"open","http://fly.to/kurtubba",0,0,SW_SHOWMAXIMIZED );
+  ShellExecute(0,"open","http://gadelkareem.com/2006/10/13/arab-renamer-v2/",0,0,SW_SHOWMAXIMIZED );
 }
 //---------------------------------------------------------------------------
 
@@ -191,7 +191,7 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
     randomize();
     int r=random(4);
     if(r==1)
-      ShellExecute(0,"open","http://fly.to/kurtubba",0,0,SW_SHOWMAXIMIZED );
+      ShellExecute(0,"open","http://gadelkareem.com/2006/10/13/arab-renamer-v2/",0,0,SW_SHOWMAXIMIZED );
   }
 #endif
 }
@@ -270,7 +270,7 @@ void __fastcall TForm1::Edit2Change(TObject *Sender)
 
 bool __fastcall TForm1::isArab(const string name)
 {
-  boost::regex e("[¡-˙]");
+  boost::regex e("[√Å-√∫]");
   if(boost::regex_search(name ,e ,boost::match_default ))
     return true;
   return false;
@@ -284,7 +284,7 @@ AnsiString __fastcall TForm1::convrtit(AnsiString ara_name ,bool tskl)
   //remove Tashkeel if not useing it
   if(!tskl)
   {
-    e.assign("[-˙]");
+    e.assign("[√∞-√∫]");
     ara_name = boost::regex_replace(string(ara_name.c_str()) ,e ,"" , boost::match_default | boost::format_all).c_str();
   }
 
@@ -293,13 +293,13 @@ AnsiString __fastcall TForm1::convrtit(AnsiString ara_name ,bool tskl)
   {
     switch(ara_name[n])
     {
-    case '‹':
-    case '˙':
-    case '¯':
+    case '√ú':
+    case '√∫':
+    case '√∏':
       cnvr[0] = '\0';
       break;
-    case 'Ï':
-      cnvr[0] = 'Ì';
+    case '√¨':
+      cnvr[0] = '√≠';
       break;
     default:
       cnvr[0] = ara_name[n];
@@ -317,125 +317,125 @@ AnsiString __fastcall TForm1::convrtit(AnsiString ara_name ,bool tskl)
     int v=1;
     switch (ara_name[n])
     {
-    case '«':
-    case '√':
+    case '√á':
+    case '√É':
       cnvr[0]='a';
       break;
-    case '¬':
+    case '√Ç':
       strcpy(cnvr, "aa");
       v=2;
       break;
-    case '≈':
+    case '√Ö':
       cnvr[0]='i';
       break;
-    case '»':
+    case '√à':
       cnvr[0]='b';
       break;
-    case ' ':
-    case 'ÿ':
+    case '√ä':
+    case '√ò':
       cnvr[0]='t';
       break;
-    case 'À':
+    case '√ã':
       strcpy(cnvr, "th");
       v=2;
       break;
-    case 'Ã':
+    case '√å':
       cnvr[0]='g';
       break;
-    case 'Õ':
+    case '√ç':
       cnvr[0]='7';
       break;
-    case 'Œ':
+    case '√é':
       strcpy(cnvr, "kh");
       v=2;
       break;
-    case 'œ':
-    case '÷':
+    case '√è':
+    case '√ñ':
       cnvr[0]='d';
       break;
-    case '–':
-    case '“':
-    case 'Ÿ':
+    case '√ê':
+    case '√í':
+    case '√ô':
       cnvr[0]='z';
       break;
-    case '—':
+    case '√ë':
       cnvr[0]='r';
       break;
-    case '”':
-    case '’':
+    case '√ì':
+    case '√ï':
       cnvr[0]='s';
       break;
-    case '‘':
+    case '√î':
       strcpy(cnvr, "sh");
       v=2;
       break;
-    case '⁄':
+    case '√ö':
       cnvr[0]='3';
       break;
-    case '€':
+    case '√õ':
       strcpy(cnvr, "gh");
       v=2;
       break;
-    case '›':
+    case '√ù':
       cnvr[0]='f';
       break;
-    case 'ﬁ':
+    case '√û':
       cnvr[0]='q';
       break;
-    case 'ﬂ':
+    case '√ü':
       cnvr[0]='k';
       break;
-    case '·':
+    case '√°':
       cnvr[0]='l';
       break;
-    case '„':
+    case '√£':
       cnvr[0]='m';
       break;
-    case '‰':
+    case '√§':
       cnvr[0]='n';
       break;
-    case 'Â':
+    case '√•':
       cnvr[0]='h';
       break;
-    case '…':
+    case '√â':
       cnvr[0]='t';
       break;
-    case 'ƒ':
+    case '√Ñ':
       strcpy(cnvr, "u'");
       v=2;
       break;
-    case 'Ê':
+    case '√¶':
       cnvr[0]='w';
       break;
-    case 'Ì':
+    case '√≠':
       cnvr[0]='y';
       break;
-    case '¡':
+    case '√Å':
       cnvr[0]='\'';
       break;
-    case '∆':
+    case '√Ü':
       strcpy(cnvr, "'e");
       v=2;
       break;
       //Tashkeel
-    case 'ı':
+    case '√µ':
       cnvr[0]='u';
       break;
-    case 'Û':
+    case '√≥':
       cnvr[0]='a';
       break;
-    case 'ˆ':
+    case '√∂':
       cnvr[0]='e';
       break;
-    case 'Ò':
+    case '√±':
       strcpy(cnvr, "un");
       v=2;
       break;
-    case '':
+    case '√∞':
       strcpy(cnvr, "an");
       v=2;
       break;
-    case 'Ú':
+    case '√≤':
       strcpy(cnvr, "en");
       v=2;
       break;
@@ -464,151 +464,151 @@ AnsiString __fastcall TForm1::Specialwords(AnsiString ara_name)
   boost::regex exp;
 
   AnsiString ptrn_DB[][2] = {
-    "«·‰«”", "An-Nas",         //known words
-      "«·›·ﬁ", "Al-Falaq",
-      "«·„”œ", "Al-Masadd",
-      "«·‰’—", "An-Nasr",
-      "«·ﬂ«›—Ê‰", "Al-Kafiroon",
-      "«·ﬂÊÀ—", "Al-Kauther",
-      "«·„«⁄Ê‰", "Al-Ma3un",
-      "ﬁ—Ì‘", "Quraish",
-      "«·›Ì·", "Al-Fil",
-      "«·⁄’—", "Al-3asr",
-      "«· ﬂ«À—", "At-Takathur",
-      "«·⁄«œÌ« ", "Al-3adiyat",
-      "«·ﬁœ—", "Al-Qadr",
-      "«·⁄·ﬁ", "Al-3alaq",
-      "«· Ì‰", "At-Tin",
-      "«·‘—Õ", "As-Sharh",
-      "«·÷ÕÌ", "Ad-Dhu7a",
-      "«··Ì·", "Al-Layl",
-      "«·‘„”", "Ash-Shams",
-      "«·»·œ", "Al-Balad",
-      "«·›Ã—", "Al-Fajr",
-      "«·ÿ«—ﬁ", "At-6ariq",
-      "«·»—ÊÃ", "Al-Burooj",
-      "«·„ÿ››Ì‰", "Al-Mutaffifin",
-      "«· ﬂÊÌ—", "At-Takwir",
-      "⁄»”", "3basa",
-      "«·‰«“⁄« ", "An-Nazi3at",
-      "«·„—”·« ", "Al-Mursalat",
-      "«·„œÀ—", "Al-Muddather",
-      "«·„“„·", "Al-Muzzammil",
-      "«·Ã‰", "Al-Jinn",
-      "‰ÊÕ", "Noo7",
-      "«·„⁄«—Ã", "Al-Ma3arij",
-      "«·ﬁ·„", "Al-Qalam",
-      "«·„·ﬂ", "Al-Mulk",
-      "«· Õ—Ì„", "At-Ta7rim",
-      "«·ÿ·«ﬁ", "At-Talaq",
-      "«· €«»‰", "At-Taghabun",
-      "«·„‰«›ﬁÊ‰", "Al-Munafiqoon",
-      "«·’›", "As-Saff",
-      "«·Õ‘—", "Al-7ashr",
-      "«·ÕœÌœ", "Al-7adid",
-      "«·—Õ„‰", "Ar-Ra7man",
-      "«·ﬁ„—", "Al-Qamar",
-      "«·‰Ã„", "An-Najm",
-      "«·ÿÊ—", "At-6ur",
-      "«·–«—Ì« ", "Az-Zariyat",
-      "«·ÕÃ—« ", "Al-7ujraat",
-      "«·› Õ", "Al-Fat7",
-      "„Õ„œ", "Muhammad",
-      "«·œŒ«‰", "Ad-Dukhan",
-      "«·“Œ—›", "Az-Zukhruf",
-      "«·‘Ê—Ì", "Ash-Shura",
-      "›’· ", "Fussilat",
-      "€«›—", "Ghafir",
-      "«·“„—", "Az-Zumar",
-      "«·’«›« ", "As-Saaffat",
-      "›«ÿ—", "Fa6er",
-      "·ﬁ„«‰", "Luqman",
-      "«·—Ê„", "Ar-Room",
-      "«·⁄‰ﬂ»Ê ", "Al-3ankaboot",
-      "«·ﬁ’’", "Al-Qasas",
-      "«·‰„·", "An-Naml",
-      "«·‘⁄—«¡", "Ash-Shu3ara'",
-      "«·›—ﬁ«‰", "Al-Furqan",
-      "«·‰Ê—", "An-Noor",
-      "«·„ƒ„‰Ê‰", "Al-Mu'menoon",
-      "«·ÕÃ", "Al-7ajj",
-      "„—Ì„", "Maryam",
-      "«·ﬂÂ›", "Al-Kahf",
-      "«·‰Õ·", "An-Na7l",
-      "«·ÕÃ—", "Al-7ijr",
-      "«·—⁄œ", "Ar-Ra3d",
-      "ÌÊ”›", "Yusuf",
-      "ÂÊœ", "Hud",
-      "ÌÊ‰”", "Yunus",
-      "«·‰”«¡", "An-Nisa",
-      "«··Â", "Allah",
-      "«··ÛÂ","Allah",
-      "··Â", "Lelah",
-      "«—» —Ì‰Ì„—", "Arab Renamer",
-      "Êı","Ê",
-      "„”·„", "Muslim",
-      "ÂœÏ", "Huda",
+    "√á√°√§√á√ì", "An-Nas",         //known words
+      "√á√°√ù√°√û", "Al-Falaq",
+      "√á√°√£√ì√è", "Al-Masadd",
+      "√á√°√§√ï√ë", "An-Nasr",
+      "√á√°√ü√á√ù√ë√¶√§", "Al-Kafiroon",
+      "√á√°√ü√¶√ã√ë", "Al-Kauther",
+      "√á√°√£√á√ö√¶√§", "Al-Ma3un",
+      "√û√ë√≠√î", "Quraish",
+      "√á√°√ù√≠√°", "Al-Fil",
+      "√á√°√ö√ï√ë", "Al-3asr",
+      "√á√°√ä√ü√á√ã√ë", "At-Takathur",
+      "√á√°√ö√á√è√≠√á√ä", "Al-3adiyat",
+      "√á√°√û√è√ë", "Al-Qadr",
+      "√á√°√ö√°√û", "Al-3alaq",
+      "√á√°√ä√≠√§", "At-Tin",
+      "√á√°√î√ë√ç", "As-Sharh",
+      "√á√°√ñ√ç√≠", "Ad-Dhu7a",
+      "√á√°√°√≠√°", "Al-Layl",
+      "√á√°√î√£√ì", "Ash-Shams",
+      "√á√°√à√°√è", "Al-Balad",
+      "√á√°√ù√å√ë", "Al-Fajr",
+      "√á√°√ò√á√ë√û", "At-6ariq",
+      "√á√°√à√ë√¶√å", "Al-Burooj",
+      "√á√°√£√ò√ù√ù√≠√§", "Al-Mutaffifin",
+      "√á√°√ä√ü√¶√≠√ë", "At-Takwir",
+      "√ö√à√ì", "3basa",
+      "√á√°√§√á√í√ö√á√ä", "An-Nazi3at",
+      "√á√°√£√ë√ì√°√á√ä", "Al-Mursalat",
+      "√á√°√£√è√ã√ë", "Al-Muddather",
+      "√á√°√£√í√£√°", "Al-Muzzammil",
+      "√á√°√å√§", "Al-Jinn",
+      "√§√¶√ç", "Noo7",
+      "√á√°√£√ö√á√ë√å", "Al-Ma3arij",
+      "√á√°√û√°√£", "Al-Qalam",
+      "√á√°√£√°√ü", "Al-Mulk",
+      "√á√°√ä√ç√ë√≠√£", "At-Ta7rim",
+      "√á√°√ò√°√á√û", "At-Talaq",
+      "√á√°√ä√õ√á√à√§", "At-Taghabun",
+      "√á√°√£√§√á√ù√û√¶√§", "Al-Munafiqoon",
+      "√á√°√ï√ù", "As-Saff",
+      "√á√°√ç√î√ë", "Al-7ashr",
+      "√á√°√ç√è√≠√è", "Al-7adid",
+      "√á√°√ë√ç√£√§", "Ar-Ra7man",
+      "√á√°√û√£√ë", "Al-Qamar",
+      "√á√°√§√å√£", "An-Najm",
+      "√á√°√ò√¶√ë", "At-6ur",
+      "√á√°√ê√á√ë√≠√á√ä", "Az-Zariyat",
+      "√á√°√ç√å√ë√á√ä", "Al-7ujraat",
+      "√á√°√ù√ä√ç", "Al-Fat7",
+      "√£√ç√£√è", "Muhammad",
+      "√á√°√è√é√á√§", "Ad-Dukhan",
+      "√á√°√í√é√ë√ù", "Az-Zukhruf",
+      "√á√°√î√¶√ë√≠", "Ash-Shura",
+      "√ù√ï√°√ä", "Fussilat",
+      "√õ√á√ù√ë", "Ghafir",
+      "√á√°√í√£√ë", "Az-Zumar",
+      "√á√°√ï√á√ù√á√ä", "As-Saaffat",
+      "√ù√á√ò√ë", "Fa6er",
+      "√°√û√£√á√§", "Luqman",
+      "√á√°√ë√¶√£", "Ar-Room",
+      "√á√°√ö√§√ü√à√¶√ä", "Al-3ankaboot",
+      "√á√°√û√ï√ï", "Al-Qasas",
+      "√á√°√§√£√°", "An-Naml",
+      "√á√°√î√ö√ë√á√Å", "Ash-Shu3ara'",
+      "√á√°√ù√ë√û√á√§", "Al-Furqan",
+      "√á√°√§√¶√ë", "An-Noor",
+      "√á√°√£√Ñ√£√§√¶√§", "Al-Mu'menoon",
+      "√á√°√ç√å", "Al-7ajj",
+      "√£√ë√≠√£", "Maryam",
+      "√á√°√ü√•√ù", "Al-Kahf",
+      "√á√°√§√ç√°", "An-Na7l",
+      "√á√°√ç√å√ë", "Al-7ijr",
+      "√á√°√ë√ö√è", "Ar-Ra3d",
+      "√≠√¶√ì√ù", "Yusuf",
+      "√•√¶√è", "Hud",
+      "√≠√¶√§√ì", "Yunus",
+      "√á√°√§√ì√á√Å", "An-Nisa",
+      "√á√°√°√•", "Allah",
+      "√á√°√°√≥√•","Allah",
+      "√°√°√•", "Lelah",
+      "√á√ë√à √ë√≠√§√≠√£√ë", "Arab Renamer",
+      "√¶√µ","√¶",
+      "√£√ì√°√£", "Muslim",
+      "√•√è√¨", "Huda",
       NULL,NULL,
-      "»”»[√≈«¬]", "Saba'",        //diffrent characters for alef and hamza
-      "«·‰»[«√¬≈]", "An-Nab'",
-      "«·[√≈«¬]Œ·«’", "Al-Ikhlas",
-      "«·Â„“[Â…]", "Al-Humaza",
-      "«·ﬁ[√≈«¬]—⁄[Â…]", "Al-Qari3a",
-      "«·“·“·[Â…]", "Az-Zalzala",
-      "«·»Ì‰[Â…]", "Al-Bayyina",
-      "«·€[√≈«¬]‘Ì[Â…]", "Al-Ghashiya",
-      "«·[√≈«¬]⁄·Ì", "Al-A3la",
-      "«·[√≈«¬]‰›ÿ«—", "Al-Infi6ar",
-      "«·[√≈«¬]‰‘ﬁ«ﬁ", "Al-Inshiqaq",
-      "«·[√≈«¬]‰”«‰", "Al-Insan",
-      "«·ﬁÌ«„[Â…]", "Al-Qiyama",
-      "«·Õ[√≈«¬]ﬁ[Â…]", "Al-7aaqqa",
-      "«·Ã„⁄[Â…]", "Al-Jumu3a",
-      "«·„„ Õ‰[Â…]", "Al-Mumta7ana",
-      "«·„Ã«œ·[Â…]", "Al-Mujadala",
-      "«·Ê«ﬁ⁄[Â…]", "Al-Waqi3a",
-      "«·[√≈«¬]Õﬁ«›", "Al-A7qaf",
-      "«·Ã«ÀÌ[Â…]", "Al-Jathiya",
-      "«·[√≈«¬]Õ“«»", "Al-A7zab",
-      "«·”Ãœ[Â…]", "As-Sajda",
-      "«·[√≈«¬]‰»Ì«¡", "Al-Anbiya'",
-      "«·[√≈«¬]”—[√≈«¬]¡", "Al-Isra'",
-      "[√≈«¬]»—«ÂÌ„", "Ibrahim",
-      "«· Ê»[Â…]", "At-Tawba",
-      "«·[√≈«¬]‰›«·", "Al-Anfal",
-      "«·[√≈«¬]⁄—«›", "Al-A3raf",
-      "«·[√≈«¬]‰⁄«„", "Al-An3aam",
-      "«·„«∆œ[Â…]", "Al-Ma'eda",
-      "[√≈«¬]· ⁄„—«‰", "Aal-e-3imran",
-      "«·»ﬁ—[Â…]", "Al-Baqara",
-      "«·›« Õ[Â…]", "Al-Fatiha",
-      "«·ﬁ—[√≈«¬]‰", "Al-Quran",
-      "ﬁ—[√≈«¬]‰", "Quran",
+      "√à√ì√à[√É√Ö√á√Ç]", "Saba'",        //diffrent characters for alef and hamza
+      "√á√°√§√à[√á√É√Ç√Ö]", "An-Nab'",
+      "√á√°[√É√Ö√á√Ç]√é√°√á√ï", "Al-Ikhlas",
+      "√á√°√•√£√í[√•√â]", "Al-Humaza",
+      "√á√°√û[√É√Ö√á√Ç]√ë√ö[√•√â]", "Al-Qari3a",
+      "√á√°√í√°√í√°[√•√â]", "Az-Zalzala",
+      "√á√°√à√≠√§[√•√â]", "Al-Bayyina",
+      "√á√°√õ[√É√Ö√á√Ç]√î√≠[√•√â]", "Al-Ghashiya",
+      "√á√°[√É√Ö√á√Ç]√ö√°√≠", "Al-A3la",
+      "√á√°[√É√Ö√á√Ç]√§√ù√ò√á√ë", "Al-Infi6ar",
+      "√á√°[√É√Ö√á√Ç]√§√î√û√á√û", "Al-Inshiqaq",
+      "√á√°[√É√Ö√á√Ç]√§√ì√á√§", "Al-Insan",
+      "√á√°√û√≠√á√£[√•√â]", "Al-Qiyama",
+      "√á√°√ç[√É√Ö√á√Ç]√û[√•√â]", "Al-7aaqqa",
+      "√á√°√å√£√ö[√•√â]", "Al-Jumu3a",
+      "√á√°√£√£√ä√ç√§[√•√â]", "Al-Mumta7ana",
+      "√á√°√£√å√á√è√°[√•√â]", "Al-Mujadala",
+      "√á√°√¶√á√û√ö[√•√â]", "Al-Waqi3a",
+      "√á√°[√É√Ö√á√Ç]√ç√û√á√ù", "Al-A7qaf",
+      "√á√°√å√á√ã√≠[√•√â]", "Al-Jathiya",
+      "√á√°[√É√Ö√á√Ç]√ç√í√á√à", "Al-A7zab",
+      "√á√°√ì√å√è[√•√â]", "As-Sajda",
+      "√á√°[√É√Ö√á√Ç]√§√à√≠√á√Å", "Al-Anbiya'",
+      "√á√°[√É√Ö√á√Ç]√ì√ë[√É√Ö√á√Ç]√Å", "Al-Isra'",
+      "[√É√Ö√á√Ç]√à√ë√á√•√≠√£", "Ibrahim",
+      "√á√°√ä√¶√à[√•√â]", "At-Tawba",
+      "√á√°[√É√Ö√á√Ç]√§√ù√á√°", "Al-Anfal",
+      "√á√°[√É√Ö√á√Ç]√ö√ë√á√ù", "Al-A3raf",
+      "√á√°[√É√Ö√á√Ç]√§√ö√á√£", "Al-An3aam",
+      "√á√°√£√á√Ü√è[√•√â]", "Al-Ma'eda",
+      "[√É√Ö√á√Ç]√° √ö√£√ë√á√§", "Aal-e-3imran",
+      "√á√°√à√û√ë[√•√â]", "Al-Baqara",
+      "√á√°√ù√á√ä√ç[√•√â]", "Al-Fatiha",
+      "√á√°√û√ë[√É√Ö√á√Ç]√§", "Al-Quran",
+      "√û√ë[√É√Ö√á√Ç]√§", "Quran",
       NULL,NULL,
-      "ﬁ","\\1Qaf\\2",      //small Quran names
-      "’","\\1Sad\\2",
-      "Ì”","\\1Ya-seen\\2",
-      "ÿ[Â…]","\\1Taha\\2",
-      "»”„", "\\1Besm\\2",
-      "Ê", "\\1wa\\2",
+      "√û","\\1Qaf\\2",      //small Quran names
+      "√ï","\\1Sad\\2",
+      "√≠√ì","\\1Ya-seen\\2",
+      "√ò[√•√â]","\\1Taha\\2",
+      "√à√ì√£", "\\1Besm\\2",
+      "√¶", "\\1wa\\2",
       NULL,NULL,
-      "Û([√¬¡«])","\\1",   //fat7a  //deplicated letters with Tashkeel
-      "([√¬¡«])Û","\\1",
-      "ˆ([≈Ì])","\\1",      //kasra
-      "([≈Ì])ˆ","\\1",
-      "ı([Êƒ])","\\1",      //dama
-      "([Êƒ])ı","\\1",
-      "(^|[^¡-˙])«·([ÿÀ’— ÷–‰œ”Ÿ“‘·])([¡-˙])","\\1A\\2-\\2\\3",       //AL- Ash-shamsya
-      "(^|[^¡-˙])«·([¡-])([¡-˙])","\\1Al-\\2\\3",       //AL- Al-Kamarya
-      "([¡-˙])√","\\1a'",          //alef hamza if not in the begining or alone
-      "([«√Ûa])Ì", "\\1y",      //ya' if got (alef or a) before it
-      "Ì([«√Ûa])", "y\\1",      //ya' if got (alef or a) after it
-      "([¡-˙])Ì", "\\1ee",      //ya' if not in the begining or alone
-      "Ê($|[^¡-])", "w\\1",      //waw when last letter
-      "([«√Ûa])Ê", "\\1w",      //waw if got (alef or a) before it
-      "([¡-˙])Ê«([^¡-˙])", "\\1u\\2",     //waw al-gama3a
-      "Ê([«√Ûa])", "w\\1",      //waw if got (alef or a) after it
-      "([¡-˙])Ê", "\\1u",      //ya' if not in the begining or alone
+      "√≥([√É√Ç√Å√á])","\\1",   //fat7a  //deplicated letters with Tashkeel
+      "([√É√Ç√Å√á])√≥","\\1",
+      "√∂([√Ö√≠])","\\1",      //kasra
+      "([√Ö√≠])√∂","\\1",
+      "√µ([√¶√Ñ])","\\1",      //dama
+      "([√¶√Ñ])√µ","\\1",
+      "(^|[^√Å-√∫])√á√°([√ò√ã√ï√ë√ä√ñ√ê√§√è√ì√ô√í√î√°])([√Å-√∫])","\\1A\\2-\\2\\3",       //AL- Ash-shamsya
+      "(^|[^√Å-√∫])√á√°([√Å-√∞])([√Å-√∫])","\\1Al-\\2\\3",       //AL- Al-Kamarya
+      "([√Å-√∫])√É","\\1a'",          //alef hamza if not in the begining or alone
+      "([√á√É√≥a])√≠", "\\1y",      //ya' if got (alef or a) before it
+      "√≠([√á√É√≥a])", "y\\1",      //ya' if got (alef or a) after it
+      "([√Å-√∫])√≠", "\\1ee",      //ya' if not in the begining or alone
+      "√¶($|[^√Å-√∞])", "w\\1",      //waw when last letter
+      "([√á√É√≥a])√¶", "\\1w",      //waw if got (alef or a) before it
+      "([√Å-√∫])√¶√á([^√Å-√∫])", "\\1u\\2",     //waw al-gama3a
+      "√¶([√á√É√≥a])", "w\\1",      //waw if got (alef or a) after it
+      "([√Å-√∫])√¶", "\\1u",      //ya' if not in the begining or alone
       NULL,NULL
   };
 
@@ -628,7 +628,7 @@ AnsiString __fastcall TForm1::Specialwords(AnsiString ara_name)
   //shared expressions with grouping
   for(i++ ; ptrn_DB[i][0] != NULL ; i++)
   {
-    e = "(^|[^¡-˙])"+ string(ptrn_DB[i][0].c_str())+ "($|[^¡-˙])";
+    e = "(^|[^√Å-√∫])"+ string(ptrn_DB[i][0].c_str())+ "($|[^√Å-√∫])";
     exp.assign(e);
     ara_name = boost::regex_replace(string(ara_name.c_str()) ,exp ,string(ptrn_DB[i][1].c_str()) , boost::match_default | boost::format_sed).c_str();
   }
